@@ -1,0 +1,95 @@
+/* Error page css  */
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&family=Monoton&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+.Error-page {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    min-height: 100vh;
+    background: radial-gradient(circle, white 0%, lightgreen 50%, grey 100%);
+}
+
+.Err-status span {
+    font-size: clamp(10rem, 50vw, 84px);
+    font-family: Rubik Moonrocks;
+    color: #b90000;
+    display: inline-block;
+    animation: fallDown 0.8s ease forwards;
+}
+
+.Err-status span:nth-child(2) {
+    font-family: Monoton;
+    color: black;
+}
+
+@keyframes fallDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h1,
+p {
+    font-family: "Poppins", sans-serif;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.e-btn {
+    --glow-color: #08723a;
+    --glow-spread-color: #218b11c7;
+    --enhanced-glow-color: #08723a;
+    --btn-color: #08723a;
+    border: .25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: whitesmoke !important;
+    /* color: var(--glow-color); */
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+    text-shadow: 0 0 .5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+}
+
+.e-btn::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: .7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+}
+
+.e-btn:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 2em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+}
+
+.e-btn:active {
+    box-shadow: 0 0 0.6em .25em var(--glow-color),
+        0 0 2.5em 2em var(--glow-spread-color),
+        inset 0 0 .5em .25em var(--glow-color);
+}
