@@ -40,7 +40,7 @@ const Register = () => {
     const handleSubmit = async (values, { setSubmitting }) => {
         setLoading(true);
         try {
-            const response = await axios.post('http://localhost:4000/api/user/register', values);
+            const response = await axios.post('https://password-reset-backend-ytao.onrender.com/api/user/register', values);
             toast.success(response.data.message, {
                 position: "top-right",
                 autoClose: 3000,

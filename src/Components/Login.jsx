@@ -34,7 +34,7 @@ const Login = () => {
     const handleSubmit = async (values, { setSubmitting }) => {
         setLoading(true);
         try {
-            const response = await axios.post('http://localhost:4000/api/user/login', values);
+            const response = await axios.post('https://password-reset-backend-ytao.onrender.com/api/user/login', values);
             const { token } = response.data; // Extract token from response
             localStorage.setItem('token', token); // Store token in localStorage
             toast.success(response.data.message, {

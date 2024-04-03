@@ -32,7 +32,7 @@ const ResetPassword = () => {
             const decodeToken = decodeURIComponent(token)
             console.log("Decoded Token:",decodeToken);
             try {
-                const response = await axios.get(`http://localhost:4000/api/user/validateresettoken/${decodeToken}`);
+                const response = await axios.get(`https://password-reset-backend-ytao.onrender.com/api/user/validateresettoken/${decodeToken}`);
                 if (response.data.valid) {
                     setTokenValid(true);
                 } else {
@@ -75,7 +75,7 @@ const ResetPassword = () => {
 
     const handleSubmit = async (values, { setSubmitting, resetForm }) => {
         try {
-            const response = await axios.post('http://localhost:4000/api/user/passwordreset', values);
+            const response = await axios.post('https://password-reset-backend-ytao.onrender.com/api/user/passwordreset', values);
             toast.success('Password Reset Successful', {
                 // Update to use response.data.message
                 position: "top-right",
